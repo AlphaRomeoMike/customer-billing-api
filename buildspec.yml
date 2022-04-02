@@ -12,7 +12,7 @@ phases:
       - sudo yum-config-manager --disable 'remi-php*'
       - sudo amazon-linux-extras enable php8.0 
       - sudo yum clean metadata
-      - sudo yum install php-pear php-cgi php-pdo php-common php-curl php-mbstring php-gd php-mysqlnd php-gettext php-bcmath php-json php-xml php-fpm php-intl php-zip
+      - sudo yum install php-pear php-cgi php-pdo php-common php-curl php-mbstring php-gd php-mysqlnd php-gettext php-bcmath php-json php-xml php-fpm php-intl
       - echo "PHP Version ⬇"
       - php -v
       - echo "Initiation of build 🏠"
