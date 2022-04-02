@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions: 
-      php: latest
     commands:
       - echo "PHP Version ⬇"
       - php -v
