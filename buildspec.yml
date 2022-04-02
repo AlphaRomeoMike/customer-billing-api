@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - sudo yum -y update
-      - sudo yum-config-manager --disable 'remi-php*'
       - sudo amazon-linux-extras disable php8.0
       - sudo yum-config-manager --enable remi-php80
       - sudo yum repolist
