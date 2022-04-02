@@ -9,7 +9,6 @@ phases:
       - php -v
       - echo "Initiation of build 🏠"
       - echo "Installing Composer 🎺"
-      - apt-get update
       - curl -s https://getcomposer.org/installer | php
       - mv composer.phar /usr/local/bin/composer
       - echo "Installing dependencies 📦"
