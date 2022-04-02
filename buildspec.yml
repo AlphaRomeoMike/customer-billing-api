@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions: 
+      php: 8.0
+    commands:
+      - echo "PHP Version ⬇"
+      - php -v
+      - echo "Initiation of build 🏠"
+      - echo "Installing Composer 🎺"
+      - apt-get update
+      - curl -s https://getcomposer.org/installer | php
+      - mv composer.phar /usr/local/bin/composer
+      - echo "Installing dependencies 📦"
+      - composer install --no-dev
+      - echo "Installed dependencies 📦"
+
+  build:
+    commands:
+      - echo "Building 🏗"
+      - composer build
+      - echo "Built 🏗"
+
+  post_build:
+    commands:
+      - echo "Post build 🏗"
+      - echo "Build completed on `date` 🏗"
