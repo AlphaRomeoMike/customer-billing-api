@@ -3,6 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
+      - sudo yum -y update
+      - sudo systemctl reboot
+      - sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      - sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm 
+      - sudo yum makecache
+      - sudo yum -y install yum-utils
+      - sudo  amazon-linux-extras | grep php
+      - sudo yum-config-manager --disable 'remi-php*'
+      - sudo amazon-linux-extras enable php8.0 
+      - sudo yum clean metadata
+      - sudo yum install php-{pear,cgi,pdo,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
       - echo "PHP Version ⬇"
       - php -v
       - echo "Initiation of build 🏠"
