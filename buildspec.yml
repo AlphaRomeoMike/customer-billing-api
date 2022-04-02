@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions: 
-      php: 8.0
+      php: 7.4
     commands:
       - echo "PHP Version ⬇"
       - php -v
