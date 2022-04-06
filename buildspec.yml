@@ -2,8 +2,18 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      docker: latest
     commands:
       - cat /etc/os-release
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+
+  build:
+    commands:
+      - echo "Building 🏗"
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - echo "Built 🏗"
       - echo "PHP Version ⬇"
       - php -v
       - echo "Initiation of build 🏠"
@@ -13,12 +23,6 @@ phases:
       - echo "Installing dependencies 📦"
       - composer install
       - echo "Installed dependencies 📦"
-
-  build:
-    commands:
-      - echo "Building 🏗"
-      - composer build
-      - echo "Built 🏗"
 
   post_build:
     commands:
