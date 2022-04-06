@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 8.*
+      php: latest
     commands:
       - sudo yum -y update
       - sudo yum list installed | grep php
