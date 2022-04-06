@@ -5,9 +5,7 @@ phases:
     runtime-versions:
       php: latest
     commands:
-      - sudo yum -y update
-      - sudo yum list installed | grep php
-      - sudo yum remove php*
+      - php -v
       - sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
       - sudo yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
       - sudo yum-config-manager --enable remi-php80
