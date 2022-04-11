@@ -3,6 +3,11 @@ jobs:
     name: "Deploy to EC2 🎉🍾"
     runs-on: ubuntu-latest
 
+on:
+  push:
+    branches:
+      - master
+
     steps:
       - name: "Checkout the files ✅🛫📂"
         uses: actions/checkout@v2
