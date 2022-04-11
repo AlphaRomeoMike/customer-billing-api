@@ -21,8 +21,6 @@ use App\Http\Controllers\Api\SubCategoryController;
 
 Route::get('/server', [HomeController::class, 'index']);
 Route::get('/dashboard', DashboardController::class);
-Route::name('api')->group(function () {
-
 	Route::middleware('auth:sanctum')->group(function () {
 		Route::post('logout', [AuthController::class, 'logout']);
 
@@ -47,4 +45,3 @@ Route::name('api')->group(function () {
 
 	Route::post('login', [AuthController::class, 'login']);
 	Route::post('register', [AuthController::class, 'register']);
-});
