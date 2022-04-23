@@ -19,7 +19,7 @@ use App\Http\Controllers\Api\SubCategoryController;
 |
 */
 
-Route::get('/server', [HomeController::class, 'index']);
+// Route::get('/server', [HomeController::class, 'index']);
 Route::get('/dashboard', DashboardController::class);
 	Route::middleware('auth:sanctum')->group(function () {
 		Route::post('logout', [AuthController::class, 'logout']);

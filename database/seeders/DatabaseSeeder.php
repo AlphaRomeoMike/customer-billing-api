@@ -14,9 +14,6 @@
          */
         public function run()
         {
-            // \App\Models\User::factory(10)->create();
-            // $this->call(CategorySeeder::class);
-            // $this->call(SubCategorySeeder::class);
-            $this->call(BillSeeder::class);
+            \App\Models\User::factory(10)->create();
         }
     }
